@@ -16,7 +16,7 @@
                           <p>Pittsburgh, PA 15260</p>
                           <ul class="list-inline" id="social">
                             {% if EMAIL %}
-                            <li><a href="mailto:{{ EMAIL }}"><i class="fa fa-envelope-o fa-lg"></i> Email </a></li>
+                            <li><a href="mailto:{{ EMAIL }}"><i class="fa fa-envelope-o fa-lg"></i> ouyang@cs.pitt.edu </a></li>
                             {% endif %}
                             {% if SOCIAL %}
                             {% for name, link in SOCIAL %}
@@ -35,7 +35,9 @@
                         <p><img src="{{ SITEURL }}/images/portrait.jpg" width="204" height="194" align="center"/></p>
                       </div>
                 </div>
-                {{ page.content }}
+                <div class="text-justify">
+                  {{ page.content }}
+                </div>
               </div>
             </section>
           {% endif %}
