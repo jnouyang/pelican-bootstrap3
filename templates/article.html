@@ -71,21 +71,26 @@
     <section id="content">
         <article>
             <header class="page-header">
-                <!--h1>
+                <h1>
                     <a href="{{ SITEURL }}/{{ article.url }}"
                        rel="bookmark"
                        title="Permalink to {{ article.title|striptags }}">
                         {{ article.title }}
                     </a>
-                </h1-->
-                <h1> {{ article.title }} </h1>
+                </h1>
+                <!-- <div class="panel"> -->
+                <!--     <div class="panel-body"> -->
+                <!--     </div> -->
+                <!-- </div> -->
+                <div class="well well-sm">
+                    {% include "includes/article_info.html" %}
+                </div>
             </header>
             <div class="entry-content">
-                <div class="panel">
-                    <div class="panel-body">
-                        {% include "includes/article_info.html" %}
-                    </div>
-                </div>
+                <!-- <div class="panel"> -->
+                <!--     <div class="panel-body"> -->
+                <!--     </div> -->
+                <!-- </div> -->
                 <div class="text-justify">
                     {{ article.content }}
                 </div>
@@ -111,4 +116,8 @@
     <!-- add shariff support -->
     <script src="{{ SITEURL }}/theme/js/shariff.min.js"></script>
 {% endif %}
+{% endblock %}
+
+{% block footer %}
+    {% include 'includes/footer.html' %}
 {% endblock %}
