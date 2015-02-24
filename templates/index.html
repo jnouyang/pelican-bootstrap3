@@ -8,8 +8,35 @@
                 {% import 'includes/translations.html' as translations with context %}
                 {{ translations.translations_for(page) }}
                 <div class="entry-content">
-                    {{ page.content }}
+                  <div class="row">
+                      <div class="col-xs-8">
+                          <h1>Jiannan Ouyang</h1>
+                          <p>Ph.D. Student, University of Pittsburgh</p>
+                          <p>210 S Bouquet St.</p>
+                          <p>Pittsburgh, PA 15260</p>
+                          <ul class="list-inline" id="social">
+                            {% if EMAIL %}
+                            <li><a href="mailto:{{ EMAIL }}"><i class="fa fa-envelope-o fa-lg"></i> Email </a></li>
+                            {% endif %}
+                            {% if SOCIAL %}
+                            {% for name, link in SOCIAL %}
+                            {% set name_sanitized = name|lower|replace('+','-plus')|replace(' ','-') %}
+                            {% if name_sanitized in ['flickr', 'spotify', 'stack-overflow', 'weibo'] %}
+                            {% set iconattributes = '"fa fa-' ~ name_sanitized ~ ' fa-lg"' %}
+                            {% else %}
+                            {% set iconattributes = '"fa fa-' ~ name_sanitized ~ '-square fa-lg"' %}
+                            {% endif %}
+                            <li><a href="{{ link }}"><i class={{ iconattributes }}></i> {{ name }}</a></li>
+                            {% endfor %}
+                            {% endif %}
+                          </ul>
+                      </div>
+                      <div class="col-xs-4">
+                        <p><img src="{{ SITEURL }}/images/portrait.jpg" width="204" height="194" align="center"/></p>
+                      </div>
                 </div>
+                {{ page.content }}
+              </div>
             </section>
           {% endif %}
         {% endfor %}
