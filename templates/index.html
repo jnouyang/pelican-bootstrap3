@@ -17,7 +17,7 @@
                           <p>ouyang (at) cs (dot) pitt (dot) edu</p>
                           <ul class="list-inline" id="social">
                             {% if EMAIL %}
-                              <li><a href="mailto:{{ EMAIL }}"><i class="fa fa-envelope-o fa-lg"></i> ouyang@cs.pitt.edu </a></li>
+                            <li><a href="mailto:{{ EMAIL }}"><i class="fa fa-envelope-o fa-lg"></i> {{ EMAIL }} </a></li>
                             {% endif %}
                             {% if SOCIAL %}
                             {% for name, link in SOCIAL %}
