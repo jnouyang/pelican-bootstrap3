@@ -9,3 +9,7 @@
 {% block footer %}
     {% include 'includes/footer.html' %}
 {% endblock %}
+
+{% block subscribe %}
+<li><a href="{{ SITEURL }}/{{ FEED_ALL_ATOM }}"><i class="fa fa-rss"></i><span class="icon-label">Subscribe</span></a></li>
+{% endblock %}
